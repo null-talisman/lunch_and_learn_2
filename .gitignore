@@ -1,0 +1,4 @@
+# ignore tf state
+terraform.tfstate.backup
+terraform.tfstate
+.terraform*
