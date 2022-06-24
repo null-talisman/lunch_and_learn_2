@@ -65,6 +65,15 @@ resource "aws_security_group" "ingress-all" {
     to_port = 22
     protocol = "tcp"
   }
+  ingress {
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+    from_port = 6443
+    to_port = 6443
+    protocol = "tcp"
+  }
+
   # Terraform removed the default rule
   egress {
     from_port = 0
