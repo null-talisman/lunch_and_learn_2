@@ -14,6 +14,8 @@
 	* Create your aws provider configuration file
 - Write some terraform to deploy three Ubuntu 20.04 VMs through AWS EC2
 	* Refer to `terraform/main.tf`
-	* We can deploy three EC2 instances, but we're unable to ping them
-	* Investigate networking and security (security groups?)
+- Follow K3s documentation to install K3s server on node 1, and join the other two nodes to the cluster.
+	* Grab K8s configuration file on the K3s server node (/etc/rancher/k3s/k3s.yaml)
+	* Copy this K8s configuration to your ~/.kube/config file on a remote node to interact with the cluster
+	* Label the additional two nodes with the worker label: `kubectl label node <NODE> node-role.kubernetes.io/worker=worker`
 
