@@ -1,6 +1,6 @@
 ---
   - name: Configure K3s Cluster
-    hosts: Control 
+    hosts: Control
     gather_facts: false
     remote_user: ubuntu
     tasks:
@@ -25,7 +25,11 @@
           cmd: cat /etc/rancher/k3s/k3s.yaml
         register: kube_config
 
-      - name: Configure K3s Agents
-        hosts: Worker
+  - name: Configure K3s Agents
+    hosts: Worker
+    gather_facts: false
+    remote_user: ubuntu
+    tasks:
+      - name: Bootstrap Worker Nodes
         ansible.builtin.shell:
-          cmd: curl -sfL https://get.k3s.io | K3S_URL=https://{{my_server}}:6443 K3S_TOKEN={{node_token}} sh -  
+          cmd: curl -sfL https://get.k3s.io | K3S_URL=https://{{ hostvars[groups['Control'][0]]['my_server']['stdout'] }}:6443 K3S_TOKEN={{ hostvars[groups['Control'][0]]['node_token']['stdout'] }} sh -  
