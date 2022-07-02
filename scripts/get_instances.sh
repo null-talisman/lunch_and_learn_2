@@ -10,31 +10,15 @@ for i in $INSTANCES
 do
 	if [[ ctr -eq  0 ]]
 	then
-		echo $'[Control]\n'$i > ansible/test-inv.ini
+		echo $'[Control]\n'$i > ../ansible/inventory.txt
 	fi
 	if [[ ctr -eq  1 ]]
 	then
-		echo $'[Worker]\n'$i >> ansible/test-inv.ini
+		echo $'[Worker]\n'$i >> ../ansible/inventory.txt
 	fi
 	if [[ ctr -eq  2 ]]
 	then
-		echo $i >> ansible/test-inv.ini
+		echo $i >> ../ansible/inventory.txt
 	fi
 	ctr=$ctr+1
 done
-
-# display inventory
-echo "Listing Ansible inventory file..."
-cat ansible/test-inv.ini
-
-# write to /etc/ansible/hosts
-INVENTORY_FILE="/etc/ansible/hosts"
-rm -rf /etc/ansible/
-mkdir /etc/ansible/
-sudo touch /etc/ansible/hosts
-
-echo "Writing to /etc/ansible/hosts..."
-sudo cp ansible/test-inv.ini /etc/ansible/hosts
-
-
-

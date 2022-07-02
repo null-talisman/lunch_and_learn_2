@@ -2,3 +2,5 @@
 terraform.tfstate.backup
 terraform.tfstate
 .terraform*
+# ignore kube_config.yaml
+kube_config.yaml
