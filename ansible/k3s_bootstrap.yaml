@@ -25,6 +25,8 @@
           cmd: cat /etc/rancher/k3s/k3s.yaml
         register: kube_config
 
+      - local_action: copy content={{ hostvars[groups['Control'][0]]['kube_config']['stdout'] }} dest=/home/n1lla/shenanigans/lunch_and_learn_2/kube_config.yaml
+          
   - name: Configure K3s Agents
     hosts: Worker
     gather_facts: false
