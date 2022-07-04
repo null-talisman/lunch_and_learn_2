@@ -12,4 +12,5 @@ terraform apply -auto-approve
 ../scripts/get_instances.sh
 
 # ansible
-ansible-playbook ../ansible/k3s_bootstrap.yaml -i ../ansible/inventory.txt
+cd ..
+ansible-playbook ansible/k3s_bootstrap.yaml -i ansible/inventory.txt -u ubuntu
