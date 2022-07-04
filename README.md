@@ -12,3 +12,4 @@ You should run `aws-configure` prior to using and replace the public key in the 
 	* Ansible playbook execution is pretty flaky; if it fails, just run the playbook `ansible playbook k3s_bootstrap.yaml -i inventory.txt -u ubuntu` 
 2. `teardown.sh` destroys the cluster
 
+After running the boostrap script, you should be able to interact with your cluster via `kubectl`
