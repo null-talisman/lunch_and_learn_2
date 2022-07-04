@@ -1,0 +1,5 @@
+ansible 2.13.1
+python 3.10.4
+terraform 1.2.2
+aws-cli 3.9.11
+kubectl 1.24.2
