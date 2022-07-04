@@ -10,15 +10,15 @@ for i in $INSTANCES
 do
 	if [[ ctr -eq  0 ]]
 	then
-		echo $'[Control]\n'$i > /ansible/inventory.txt
+		echo $'[Control]\n'$i > ./ansible/inventory.txt
 	fi
 	if [[ ctr -eq  1 ]]
 	then
-		echo $'[Worker]\n'$i >> /ansible/inventory.txt
+		echo $'[Worker]\n'$i >> ./ansible/inventory.txt
 	fi
 	if [[ ctr -eq  2 ]]
 	then
-		echo $i >> /ansible/inventory.txt
+		echo $i >> ./ansible/inventory.txt
 	fi
 	ctr=$ctr+1
 done

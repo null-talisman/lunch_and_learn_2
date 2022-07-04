@@ -10,10 +10,10 @@ terraform apply -auto-approve
 
 # get ec2 instances and run playbook
 cd ..
-/scripts/get_instances.sh
+./scripts/get_instances.sh
 ansible-playbook ansible/k3s_bootstrap.yaml -i ansible/inventory.txt -u ubuntu
 
 # fix kubeconfig and set as KUBECONFIG
-/scripts/fix_kube_config.sh
+./scripts/fix_kube_config.sh
 export KUBECONFIG=kube_fix.yaml
 
