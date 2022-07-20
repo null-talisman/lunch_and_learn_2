@@ -14,3 +14,5 @@ You should run `aws-configure` prior to using and replace the public key in the 
 2. `teardown.sh` destroys the cluster
 
 After running the boostrap script, you should be able to interact with your cluster via `kubectl`
+
+If you experience a certificate issue, append `--insecure-skip-tls-verify` to the end of your `kubectl` command.
