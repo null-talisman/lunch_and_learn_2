@@ -6,3 +6,5 @@ terraform.tfstate
 kube_*
 # ignore ansible inventory
 ansible/inventory.txt
+# pw
+.pw_*
