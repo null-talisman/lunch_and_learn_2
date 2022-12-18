@@ -4,3 +4,5 @@ terraform.tfstate
 .terraform*
 # ignore kube_config.yaml
 kube_*
+# ignore ansible inventory
+ansible/inventory.txt
