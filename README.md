@@ -1,5 +1,8 @@
 ## ClusterCreationTool (K3s)
-This tool is used to create and bootstrap a three node K3s cluster in AWS EC2.
+This tool is used to create and bootstrap a three node K3s cluster in AWS EC2. 
+
+### About
+I built this project when I was trying to learn more about AWS and Terraform as an absolute beginner. 
 
 ### Usage
 You can clone this repository and work from within the `ClusterCreationTool-K3s` directory.
